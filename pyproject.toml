@@ -1,0 +1,28 @@
+[project]
+name = "furnsearch"
+version = "0.1.0"
+description = "Multimodal furniture search engine on the Amazon Berkeley Objects (ABO) dataset"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+# Heavier deps are grouped so early phases install fast.
+# Install with: uv sync --extra ingest --extra ml --extra serve
+[project.optional-dependencies]
+ingest = ["pandas>=2.0", "pyarrow>=15.0", "requests>=2.31"]
+ml = ["sentence-transformers>=3.0", "open_clip_torch>=2.24", "faiss-cpu>=1.8"]
+serve = ["fastapi>=0.110", "uvicorn>=0.29", "pydantic>=2.0"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/furnsearch"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,26 @@
+# --- Data & generated artifacts (NEVER commit; CC BY-NC dataset + large files) ---
+data/raw/
+data/processed/
+data/index/
+*.tar
+*.parquet
+*.gz
+# product images (ABO is CC BY-NC; only store IDs/paths, never the images)
+**/images/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- Virtual envs / uv ---
+.venv/
+uv.lock
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/

@@ -67,10 +67,11 @@
 
 ```
 search_engine/
-├── README.md
-├── learning_handout.md          # 已有:知识讲义
-├── dev_plan.md                  # 本文件
+├── README.md                    # 项目简介 + 文档导航
 ├── pyproject.toml
+├── doc/
+│   ├── takeaway.md              # 理论知识 + 面试准备
+│   └── dev_plan.md              # 本文件:架构 + 实施计划
 ├── data/
 │   ├── raw/                     # ABO 原始下载(gitignore)
 │   ├── processed/               # 清洗后的家具子集 parquet
